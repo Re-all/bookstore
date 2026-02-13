@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIBRO - 당신의 서재</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="header-inner">
+            <a href="#" class="logo">LIBRO</a>
+            <nav class="nav">
+                <a href="#" class="nav-link">베스트</a>
+                <a href="#" class="nav-link">신간</a>
+                <a href="#" class="nav-link">국내도서</a>
+                <a href="#" class="nav-link">외국도서</a>
+                <a href="#" class="nav-link">eBook</a>
+            </nav>
+            <div class="header-actions">
+                <div class="search-box">
+                    <input type="text" placeholder="책 제목, 저자, ISBN 검색" id="searchInput">
+                    <button class="search-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                </div>
+                <button class="icon-btn" title="장바구니">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="cart-count">3</span>
+                </button>
+                <button class="icon-btn" title="마이페이지">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 히어로 섹션 -->
+    <section class="hero">
+        <div class="hero-slider">
+            <div class="hero-slide active">
+                <div class="hero-content">
+                    <span class="hero-tag">이달의 추천</span>
+                    <h1 class="hero-title">2024년, 당신의<br>인생책을 만나세요</h1>
+                    <p class="hero-desc">전문 큐레이터가 엄선한 올해의 베스트셀러와<br>숨겨진 명작들을 지금 만나보세요.</p>
+                    <a href="#" class="hero-btn">추천 도서 보기</a>
+                </div>
+                <div class="hero-image">
+                    <div class="book-stack">
+                        <div class="book book-1"></div>
+                        <div class="book book-2"></div>
+                        <div class="book book-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-dots">
+            <button class="dot active"></button>
+            <button class="dot"></button>
+            <button class="dot"></button>
+        </div>
+    </section>
+
+    <!-- 카테고리 퀵메뉴 -->
+    <section class="categories">
+        <div class="container">
+            <div class="category-grid">
+                <a href="#" class="category-item">
+                    <div class="category-icon">📚</div>
+                    <span>소설</span>
+                </a>
+                <a href="#" class="category-item">
+                    <div class="category-icon">💼</div>
+                    <span>경제/경영</span>
+                </a>
+                <a href="#" class="category-item">
+                    <div class="category-icon">🧠</div>
+                    <span>자기계발</span>
+                </a>
+                <a href="#" class="category-item">
+                    <div class="category-icon">🎨</div>
+                    <span>예술/문화</span>
+                </a>
+                <a href="#" class="category-item">
+                    <div class="category-icon">🔬</div>
+                    <span>과학/IT</span>
+                </a>
+                <a href="#" class="category-item">
+                    <div class="category-icon">👶</div>
+                    <span>어린이</span>
+                </a>
+                <a href="#" class="category-item">
+                    <div class="category-icon">📖</div>
+                    <span>인문학</span>
+                </a>
+                <a href="#" class="category-item">
+                    <div class="category-icon">✈️</div>
+                    <span>여행</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 베스트셀러 섹션 -->
+    <section class="section bestseller">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">베스트셀러</h2>
+                    <p class="section-subtitle">지금 가장 많이 읽는 책</p>
+                </div>
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="daily">일간</button>
+                    <button class="tab-btn" data-tab="weekly">주간</button>
+                    <button class="tab-btn" data-tab="monthly">월간</button>
+                </div>
+            </div>
+            <div class="book-grid" id="bestsellerGrid">
+                <!-- 책 카드들이 JavaScript로 생성됩니다 -->
+            </div>
+            <a href="#" class="view-more">전체보기 →</a>
+        </div>
+    </section>
+
+    <!-- 신간 도서 섹션 -->
+    <section class="section new-releases">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">신간 도서</h2>
+                    <p class="section-subtitle">따끈따끈한 새 책</p>
+                </div>
+                <a href="#" class="view-all">전체보기</a>
+            </div>
+            <div class="book-slider" id="newReleasesSlider">
+                <button class="slider-btn prev" id="prevBtn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6"></path>
+                    </svg>
+                </button>
+                <div class="slider-track" id="sliderTrack">
+                    <!-- 책 카드들이 JavaScript로 생성됩니다 -->
+                </div>
+                <button class="slider-btn next" id="nextBtn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 이벤트 배너 -->
+    <section class="event-banner">
+        <div class="container">
+            <div class="banner-card">
+                <div class="banner-content">
+                    <span class="banner-tag">EVENT</span>
+                    <h3 class="banner-title">첫 구매 회원<br>20% 할인 쿠폰</h3>
+                    <p class="banner-desc">신규 가입하고 특별한 혜택을 받아보세요</p>
+                    <button class="banner-btn">쿠폰 받기</button>
+                </div>
+                <div class="banner-deco">
+                    <div class="circle c1"></div>
+                    <div class="circle c2"></div>
+                </div>
+            </div>
+            <div class="banner-card dark">
+                <div class="banner-content">
+                    <span class="banner-tag">MEMBERSHIP</span>
+                    <h3 class="banner-title">프리미엄 멤버십<br>무료 배송의 특권</h3>
+                    <p class="banner-desc">연간 구독으로 무제한 무료 배송</p>
+                    <button class="banner-btn light">자세히 보기</button>
+                </div>
+                <div class="banner-deco">
+                    <div class="circle c1"></div>
+                    <div class="circle c2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 추천 도서 섹션 -->
+    <section class="section recommendations">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">에디터 추천</h2>
+                    <p class="section-subtitle">LIBRO 에디터가 엄선한 책</p>
+                </div>
+            </div>
+            <div class="recommend-grid" id="recommendGrid">
+                <!-- 책 카드들이 JavaScript로 생성됩니다 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 리뷰 섹션 -->
+    <section class="section reviews">
+        <div class="container">
+            <div class="section-header center">
+                <h2 class="section-title">독자 리뷰</h2>
+                <p class="section-subtitle">다른 독자들의 생생한 이야기</p>
+            </div>
+            <div class="review-grid" id="reviewGrid">
+                <!-- 리뷰 카드들이 JavaScript로 생성됩니다 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#" class="logo">LIBRO</a>
+                    <p class="footer-desc">당신의 일상에 책 한 권의 여유를.<br>LIBRO가 함께합니다.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">YouTube</a>
+                        <a href="#" class="social-link">Blog</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>쇼핑 안내</h4>
+                        <a href="#">배송 안내</a>
+                        <a href="#">반품/교환</a>
+                        <a href="#">결제 방법</a>
+                        <a href="#">적립금 안내</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>고객 서비스</h4>
+                        <a href="#">자주 묻는 질문</a>
+                        <a href="#">1:1 문의</a>
+                        <a href="#">공지사항</a>
+                        <a href="#">이벤트</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>회사 소개</h4>
+                        <a href="#">회사 소개</a>
+                        <a href="#">채용 정보</a>
+                        <a href="#">제휴 문의</a>
+                        <a href="#">IR 정보</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 LIBRO. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">이용약관</a>
+                    <a href="#">개인정보처리방침</a>
+                    <a href="#">사업자정보확인</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 모달 -->
+    <div class="modal" id="bookModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal-body">
+                <div class="modal-book-cover" id="modalCover"></div>
+                <div class="modal-info">
+                    <span class="modal-category" id="modalCategory"></span>
+                    <h2 class="modal-title" id="modalTitle"></h2>
+                    <p class="modal-author" id="modalAuthor"></p>
+                    <p class="modal-desc" id="modalDesc"></p>
+                    <div class="modal-price">
+                        <span class="price-original" id="modalOriginalPrice"></span>
+                        <span class="price-sale" id="modalSalePrice"></span>
+                    </div>
+                    <div class="modal-actions">
+                        <button class="btn-cart">장바구니</button>
+                        <button class="btn-buy">바로 구매</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
